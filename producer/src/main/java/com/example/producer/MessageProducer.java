@@ -12,13 +12,13 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class MessageProducer implements ApplicationRunner {
 
-  private final RabbitTemplate template;
   private final Queue queue;
+  private final RabbitTemplate template;
 
   @Override
-  public void run(ApplicationArguments args) throws Exception {
+  public void run(ApplicationArguments args) {
     System.out.println("Sending message...");
-    sendMessage(new Person(1, "Matt", "Smith", 1.83));
+    sendMessage(new Person(1, "Josh", "Smith", 1.83));
     System.out.println("Message sent!");
   }
 

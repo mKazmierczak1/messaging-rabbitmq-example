@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitConfig {
 
   @Bean
-  public Queue myQueue(@Value("${producer.queue-name}") String queueName) {
+  public Queue testQueue(@Value("${producer.queue-names.test-queue}") String queueName) {
     return new Queue(queueName, false);
   }
 }
